@@ -42,12 +42,48 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($Data as $muncul)
                   <tr>
-                      <td></td>
+                    @for ($i = 0; $i <count($muncul); $i++)    
+                    @if ($i<0)
+                      <td>{{ $muncul[$i] }}</td> 
+                    @continue 
+                    @endif
+                    @if ($muncul[3] <= 5)
+                      <td class="bg bg-success">{{ $muncul[$i]  }}</td>
+                    @continue
+                    @endif
+                     <td class="bg bg-danger">{{ $muncul[$i]  }}</td>
+                    @endfor
+                      
                   </tr>                
+                  @endforeach
                 </tbody>
               </table>
             </div>
+            {{-- //table kedua --}}
+          
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Bordered Table</h3>
+            </div>
+            <!-- /.card-header -->
             <div class="card-body">
               <table class="table table-bordered">
                 <thead>                  
@@ -56,15 +92,18 @@
                     <th>Bagian</th>
                     <th>Lama kerja</th>
                     <th>Gaji</th>
+                    <th>THR</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                      <td></td>
-                  </tr>                
+                 <tr>
+                   <td></td>
+                 </tr>
                 </tbody>
               </table>
             </div>
+            {{-- //table kedua --}}
+          
             <!-- /.card-body -->
           </div>
           <!-- /.card -->

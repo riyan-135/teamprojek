@@ -19,3 +19,5 @@ Route::get('/', function () {
 Route::get('/konten', function () {
     return view('admin.konten');
 });
+
+Route::get('/masuk', 'DatakaryawanController@Data')->name('masuk');
