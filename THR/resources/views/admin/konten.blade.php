@@ -35,27 +35,30 @@
               <table class="table table-bordered">
                 <thead>                  
                   <tr>
+                    <th>No</th>
                     <th>Nama</th>
                     <th>Bagian</th>
-                    <th>Lama kerja</th>
                     <th>Gaji</th>
+                    <th>Masa Kerja</th>
+                    <th>THR</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($Data as $muncul)
+                  @foreach ($karyawan as $muncul)
                   <tr>
-                    @for ($i = 0; $i <count($muncul); $i++)    
-                    @if ($i<0)
-                      <td>{{ $muncul[$i] }}</td> 
-                    @continue 
-                    @endif
-                    @if ($muncul[3] <= 5)
-                      <td class="bg bg-success">{{ $muncul[$i]  }}</td>
+                    @for ($i = 0; $i <count($muncul); $i++)
+                    @if ($muncul[$i] <= 5)
+                      <td>{{ $muncul[$i] }}</td>
                     @continue
                     @endif
-                     <td class="bg bg-danger">{{ $muncul[$i]  }}</td>
+                     <td>{{ $muncul[$i] }}</td>
                     @endfor
-                      
+
+                    @if ($muncul[4]<=5)
+                        <td>{{ $muncul[3]*3 }}</td>
+                    @elseif($muncul[4]>=10)
+                      <td>{{ $muncul[3]*4 }}</td>
+                    @endif
                   </tr>                
                   @endforeach
                 </tbody>
