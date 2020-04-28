@@ -21,3 +21,4 @@ Route::get('/konten', function () {
 });
 
 Route::get('/masuk', 'DatakaryawanController@Data')->name('masuk');
+Route::get('/home', 'karyawanController@index')->name('home');
